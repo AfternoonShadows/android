@@ -54,7 +54,9 @@ public class UiLog {
         return obj == null ? "<null>" : obj.getClass().getSimpleName();
     }
     /**
-     * 一般会添加一个boolean型的方法，用来判断权限是否开启，如果开启可以打印log一般会添加一个boolean型的方法，用来判断权限是否开启，如果开启可以打印log.
+     * 一般会添加一个boolean型的方法，用来判断权限是否开启，
+     * 如果开启可以打印log一般会添加一个boolean型的方法，
+     * 用来判断权限是否开启，如果开启可以打印log.
      */
 
 }
