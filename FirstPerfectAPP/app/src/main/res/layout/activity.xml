@@ -1,38 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:layout_height="match_parent">
 
     <LinearLayout
-        android:id="@+id/menu"
+        android:id="@+id/activity_ll_menu"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal">
 
         <Button
+            android:id="@+id/activity_btn_module"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/white" />
+            android:background="@color/white"
+            android:text="@string/activity_btn_module"
+            android:textSize="25dp" />
 
         <Button
+            android:id="@+id/activity_btn_voice"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/white" />
+            android:background="@color/white"
+            android:text="@string/activity_btn_voice"
+            android:textSize="25dp" />
 
         <Button
+            android:id="@+id/activity_btn_video"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/white" />
+            android:background="@color/white"
+            android:text="@string/activity_btn_video"
+            android:textSize="25dp" />
     </LinearLayout>
 
     <FrameLayout
-        android:id="@+id/content"
+        android:id="@+id/activity_fl_content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/menu" />
+        android:layout_above="@+id/activity_ll_menu" />
 </RelativeLayout>

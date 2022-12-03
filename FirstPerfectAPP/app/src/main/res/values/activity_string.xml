@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="activity_btn_module">组件</string>
+    <string name="activity_btn_voice">音频</string>
+    <string name="activity_btn_video">视频</string>
+</resources>
