@@ -15,8 +15,9 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/activity_shape_button"
+            android:background="@drawable/activity_selector_btn"
             android:text="@string/activity_btn_module"
+            android:textColor="@color/activity_selector_txt"
             android:textSize="25dp" />
 
         <Button
@@ -24,7 +25,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/activity_shape_button"
+            android:background="@drawable/activity_selector_btn"
             android:text="@string/activity_btn_voice"
             android:textSize="25dp" />
 
@@ -33,7 +34,7 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@drawable/activity_shape_button"
+            android:background="@drawable/activity_selector_btn"
             android:text="@string/activity_btn_video"
             android:textSize="25dp" />
     </LinearLayout>
