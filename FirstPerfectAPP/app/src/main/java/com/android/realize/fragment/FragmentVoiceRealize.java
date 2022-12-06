@@ -31,7 +31,7 @@ public class FragmentVoiceRealize extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         UiLog.i(TAG, "onCreateView: ");
         if (root == null) {
-            root = inflater.inflate(R.layout.fragment_module, container, false);
+            root = inflater.inflate(R.layout.fragment_voice, container, false);
         }
         return root;
     }

@@ -3,4 +3,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <LinearLayout
+        android:id="@+id/fragment_voice_ll_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/view_radio_10"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/fragment_voice_bottom_img"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp" />
+
+        <TextView
+            android:id="@+id/fragment_voice_bottom_txt"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:text="shuahduahsueweqeqwrqrwrqrqwrds" />
+
+        <Button
+            android:id="@+id/fragment_voice_bottom_stop"
+            android:layout_width="60dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="80dp"
+            android:background="@drawable/btn_circle"
+            android:text="||" />
+    </LinearLayout>
 </RelativeLayout>
