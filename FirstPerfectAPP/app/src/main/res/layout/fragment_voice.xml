@@ -25,13 +25,14 @@
             android:gravity="center"
             android:singleLine="true"
             android:text="shuahduahsueweqeqwrqrwrqrqwrds" />
-
+        <!--     android:textAllCaps="false"   android默认将Button中的小写转换成大写，使用此属性禁止转换 -->
         <Button
             android:id="@+id/fragment_voice_bottom_stop"
             android:layout_width="60dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="80dp"
             android:background="@drawable/btn_circle"
-            android:text="||" />
+            android:text="||"
+            android:textAllCaps="false" />
     </LinearLayout>
 </RelativeLayout>

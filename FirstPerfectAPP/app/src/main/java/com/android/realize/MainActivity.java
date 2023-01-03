@@ -108,6 +108,8 @@ public class MainActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
         fragmentTransaction.replace(R.id.activity_fl_content, fragment);
+        // 该方法使程序点击back时，不直接结束程序，而是返回到上一个fragment(将事物添加到返回栈中)
+        fragmentTransaction.addToBackStack(null);
         fragmentTransaction.commit();
     }
 
