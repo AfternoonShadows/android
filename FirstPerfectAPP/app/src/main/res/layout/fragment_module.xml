@@ -12,4 +12,12 @@
         android:text="广播静态注册"
         android:textAllCaps="false"
         android:textColor="@color/black" />
+    <Button
+        android:id="@+id/fragment_module_btn_broadcast_register"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:text="广播动态注册"
+        android:textAllCaps="false"
+        android:textColor="@color/black" />
 </LinearLayout>

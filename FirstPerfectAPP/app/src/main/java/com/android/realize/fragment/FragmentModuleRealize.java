@@ -1,8 +1,10 @@
 package com.android.realize.fragment;
 
+import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,6 +14,7 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 
 import com.android.realize.R;
+import com.android.realize.broadcast.BroadcastRegister;
 import com.android.realize.broadcast.StaticRegistrationBroadcast;
 import com.android.realize.interfacces.IGeneralInterface;
 import com.android.realize.unicom.UiLog;
@@ -20,7 +23,12 @@ public class FragmentModuleRealize extends Fragment implements IGeneralInterface
     private static final String TAG = FragmentModuleRealize.class.getSimpleName();
     private View root;
     private OnClick mOnClick;
+    // 注册广播过滤器
+    private IntentFilter mIntentFilter;
+    // 静态广播
     private Button mStaticRegisterBroadcast;
+    // 动态广播
+    private Button mRegisterBroadcast;
 
     @Override
     public void onAttach(Context context) {
@@ -96,8 +104,13 @@ public class FragmentModuleRealize extends Fragment implements IGeneralInterface
     @Override
     public void init() {
         mOnClick = new OnClick();
+        mIntentFilter = new IntentFilter();
+
         mStaticRegisterBroadcast = root.findViewById(R.id.fragment_module_btn_broadcast_static_register);
+        mRegisterBroadcast = root.findViewById(R.id.fragment_module_btn_broadcast_register);
+
         mStaticRegisterBroadcast.setOnClickListener(mOnClick);
+        mRegisterBroadcast.setOnClickListener(mOnClick);
     }
 
     @Override
@@ -110,13 +123,22 @@ public class FragmentModuleRealize extends Fragment implements IGeneralInterface
 
         @Override
         public void onClick(View v) {
-            UiLog.d(TAG, "OnClick: " + v.getId());
             switch (v.getId()) {
                 case R.id.fragment_module_btn_broadcast_static_register: {
                     Intent intent = new Intent();
                     ComponentName componentName = new ComponentName("com.android.realize",
                             "com.android.realize.broadcast.StaticRegistrationBroadcast");
                     intent.setComponent(componentName);
+                    getActivity().sendBroadcast(intent);
+                    break;
+                }
+                case R.id.fragment_module_btn_broadcast_register: {
+                    // 动态注册广播
+                    mIntentFilter.addAction("com.android.realize.broadcast.BroadcastRegister");
+                    BroadcastRegister broadcastRegister = new BroadcastRegister();
+                    getActivity().registerReceiver(broadcastRegister, mIntentFilter);
+                    // 发送广播
+                    Intent intent = new Intent("com.android.realize.broadcast.BroadcastRegister");
                     getActivity().sendBroadcast(intent);
                     break;
                 }
