@@ -1,9 +1,11 @@
 package com.android.realize;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -43,6 +45,18 @@ public class MainActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         UiLog.i(TAG, "onResume: ");
+    }
+
+    /**
+     * 在AndroidManifest.xml中加入
+     * android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
+     * 加入该配置后，不管是进入多窗口还是横屏切换，活动都不会被创新创建
+     * 而是将屏幕变化通知到Activity的onConfigurationChanged()中
+     * @param newConfig
+     */
+    @Override
+    public void onConfigurationChanged(@NonNull Configuration newConfig) {
+        super.onConfigurationChanged(newConfig);
     }
 
     @Override
