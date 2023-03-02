@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import com.android.realize.R;
 import com.android.realize.broadcast.BroadcastRegister;
 import com.android.realize.broadcast.StaticRegistrationBroadcast;
+import com.android.realize.carema.CaremaActivity;
 import com.android.realize.interfacces.IGeneralInterface;
 import com.android.realize.unicom.UiLog;
 
@@ -29,6 +30,8 @@ public class FragmentModuleRealize extends Fragment implements IGeneralInterface
     private Button mStaticRegisterBroadcast;
     // 动态广播
     private Button mRegisterBroadcast;
+    // 相机
+    private Button mCarema;
 
     @Override
     public void onAttach(Context context) {
@@ -108,9 +111,11 @@ public class FragmentModuleRealize extends Fragment implements IGeneralInterface
 
         mStaticRegisterBroadcast = root.findViewById(R.id.fragment_module_btn_broadcast_static_register);
         mRegisterBroadcast = root.findViewById(R.id.fragment_module_btn_broadcast_register);
+        mCarema = root.findViewById(R.id.fragment_module_btn_camera);
 
         mStaticRegisterBroadcast.setOnClickListener(mOnClick);
         mRegisterBroadcast.setOnClickListener(mOnClick);
+        mCarema.setOnClickListener(mOnClick);
     }
 
     @Override
@@ -140,6 +145,11 @@ public class FragmentModuleRealize extends Fragment implements IGeneralInterface
                     // 发送广播
                     Intent intent = new Intent("com.android.realize.broadcast.BroadcastRegister");
                     getActivity().sendBroadcast(intent);
+                    break;
+                }
+                case R.id.fragment_module_btn_camera: {
+                    Intent intent = new Intent(getActivity(), CaremaActivity.class);
+                    startActivity(intent);
                     break;
                 }
                 default: {
