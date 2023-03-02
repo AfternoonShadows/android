@@ -13,6 +13,7 @@ public class BroadcastRegister extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
         UiLog.i(TAG, "动态注册广播");
+        UiLog.i(TAG, "12314动态注册广播");
         Toast.makeText(context, "动态注册广播", Toast.LENGTH_SHORT).show();
     }
 }
