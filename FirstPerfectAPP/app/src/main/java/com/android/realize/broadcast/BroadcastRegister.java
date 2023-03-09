@@ -8,7 +8,7 @@ import android.widget.Toast;
 import com.android.realize.unicom.UiLog;
 
 public class BroadcastRegister extends BroadcastReceiver {
-    private static final String TAG = BroadcastRegister.class.getSimpleName();
+    private static final String TAG = "BroadcastRegister";
 
     @Override
     public void onReceive(Context context, Intent intent) {

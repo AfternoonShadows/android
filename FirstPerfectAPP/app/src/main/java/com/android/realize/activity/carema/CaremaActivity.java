@@ -1,4 +1,4 @@
-package com.android.realize.carema;
+package com.android.realize.activity.carema;
 
 import android.content.Intent;
 import android.os.Bundle;

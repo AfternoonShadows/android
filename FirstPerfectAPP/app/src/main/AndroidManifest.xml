@@ -26,7 +26,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".carema.CaremaActivity" />
+        <activity android:name=".activity.carema.CaremaActivity" />
+        <activity android:name=".activity.scrollview.ScrollViewActivity" />
 
         <receiver
             android:name=".broadcast.StaticRegistrationBroadcast"

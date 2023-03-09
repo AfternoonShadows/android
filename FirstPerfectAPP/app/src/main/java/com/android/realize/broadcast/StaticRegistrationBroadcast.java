@@ -10,7 +10,7 @@ import com.android.realize.unicom.UiLog;
  *
  **/
 public class StaticRegistrationBroadcast extends BroadcastReceiver {
-    private static final String TAG = StaticRegistrationBroadcast.class.getSimpleName();
+    private static final String TAG = "StaticRegistrationBroadcast";
 
     @Override
     public void onReceive(Context context, Intent intent) {

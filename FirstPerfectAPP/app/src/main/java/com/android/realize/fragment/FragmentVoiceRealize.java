@@ -12,7 +12,7 @@ import com.android.realize.R;
 import com.android.realize.unicom.UiLog;
 
 public class FragmentVoiceRealize extends Fragment {
-    private static final String TAG = FragmentVoiceRealize.class.getSimpleName();
+    private static final String TAG = "FragmentVoiceRealize";
     private View root;
 
     @Override

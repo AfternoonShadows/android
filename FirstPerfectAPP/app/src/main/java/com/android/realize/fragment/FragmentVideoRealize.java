@@ -12,7 +12,7 @@ import com.android.realize.R;
 import com.android.realize.unicom.UiLog;
 
 public class FragmentVideoRealize extends Fragment {
-    private static final String TAG = FragmentVideoRealize.class.getSimpleName();
+    private static final String TAG = "FragmentVideoRealize";
     private View root;
 
     @Override

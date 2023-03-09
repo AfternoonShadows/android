@@ -1,6 +1,5 @@
 package com.android.realize.fragment;
 
-import android.content.BroadcastReceiver;
 import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
@@ -14,14 +13,14 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 
 import com.android.realize.R;
+import com.android.realize.activity.scrollview.ScrollViewActivity;
 import com.android.realize.broadcast.BroadcastRegister;
-import com.android.realize.broadcast.StaticRegistrationBroadcast;
-import com.android.realize.carema.CaremaActivity;
+import com.android.realize.activity.carema.CaremaActivity;
 import com.android.realize.interfacces.IGeneralInterface;
 import com.android.realize.unicom.UiLog;
 
 public class FragmentModuleRealize extends Fragment implements IGeneralInterface {
-    private static final String TAG = FragmentModuleRealize.class.getSimpleName();
+    private static final String TAG = "FragmentModuleRealize";
     private View root;
     private OnClick mOnClick;
     // 注册广播过滤器
@@ -32,6 +31,8 @@ public class FragmentModuleRealize extends Fragment implements IGeneralInterface
     private Button mRegisterBroadcast;
     // 相机
     private Button mCarema;
+    // 滚动视图
+    private Button mScrollView;
 
     @Override
     public void onAttach(Context context) {
@@ -112,10 +113,12 @@ public class FragmentModuleRealize extends Fragment implements IGeneralInterface
         mStaticRegisterBroadcast = root.findViewById(R.id.fragment_module_btn_broadcast_static_register);
         mRegisterBroadcast = root.findViewById(R.id.fragment_module_btn_broadcast_register);
         mCarema = root.findViewById(R.id.fragment_module_btn_camera);
+        mScrollView = root.findViewById(R.id.fragment_module_btn_scrollView);
 
         mStaticRegisterBroadcast.setOnClickListener(mOnClick);
         mRegisterBroadcast.setOnClickListener(mOnClick);
         mCarema.setOnClickListener(mOnClick);
+        mScrollView.setOnClickListener(mOnClick);
     }
 
     @Override
@@ -149,6 +152,11 @@ public class FragmentModuleRealize extends Fragment implements IGeneralInterface
                 }
                 case R.id.fragment_module_btn_camera: {
                     Intent intent = new Intent(getActivity(), CaremaActivity.class);
+                    startActivity(intent);
+                    break;
+                }
+                case R.id.fragment_module_btn_scrollView: {
+                    Intent intent = new Intent(getActivity(), ScrollViewActivity.class);
                     startActivity(intent);
                     break;
                 }

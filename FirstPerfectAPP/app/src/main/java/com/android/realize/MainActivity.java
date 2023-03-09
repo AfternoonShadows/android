@@ -17,7 +17,7 @@ import com.android.realize.fragment.FragmentVoiceRealize;
 import com.android.realize.unicom.UiLog;
 
 public class MainActivity extends AppCompatActivity {
-    private final String TAG = this.getClass().getSimpleName();
+    private final String TAG = "MainActivity";
     private Fragment mFragment = null;
     private Button mBtnModel;
     private Button mBtnVoice;
