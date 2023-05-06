@@ -4,8 +4,26 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <TextView
+    <Button
+        android:id="@+id/activity_scrollview_btn_up"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="scrollview" />
+        android:layout_height="wrap_content"
+        android:text="滚动到顶部" />
+
+    <ScrollView
+        android:id="@+id/activity_scrollview_sv"
+        android:layout_width="match_parent"
+        android:layout_height="100dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/scrollViewContent" />
+    </ScrollView>
+
+    <Button
+        android:id="@+id/activity_scrollview_btn_down"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="滚动到底部" />
 </LinearLayout>
