@@ -38,4 +38,18 @@
         android:background="@drawable/view_radio_10"
         android:text="滚动视图"
         android:textColor="@color/black" />
+    <Button
+        android:id="@+id/fragment_module_btn_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/view_radio_10"
+        android:text="List_View"
+        android:textColor="@color/black" />
+    <Button
+        android:id="@+id/fragment_module_btn_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/view_radio_10"
+        android:text="Recyclerview_View"
+        android:textColor="@color/black" />
 </LinearLayout>

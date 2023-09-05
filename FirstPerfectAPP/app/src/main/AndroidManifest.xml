@@ -28,6 +28,8 @@
         </activity>
         <activity android:name=".activity.carema.CaremaActivity" />
         <activity android:name=".activity.scrollview.ScrollViewActivity" />
+        <activity android:name=".activity.list.ListViewActivity" />
+        <activity android:name=".activity.list.RecyclerViewActivity" />
 
         <receiver
             android:name=".broadcast.StaticRegistrationBroadcast"

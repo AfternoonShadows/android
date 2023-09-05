@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
+        switchFragment(mFragmentModuleRealize);
         UiLog.i(TAG, "onStart: ");
     }
 
@@ -52,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
      * android:configChanges="orientation|keyboardHidden|screenSize|screenLayout"
      * 加入该配置后，不管是进入多窗口还是横屏切换，活动都不会被创新创建
      * 而是将屏幕变化通知到Activity的onConfigurationChanged()中
+     *
      * @param newConfig
      */
     @Override

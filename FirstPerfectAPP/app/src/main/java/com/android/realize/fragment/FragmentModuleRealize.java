@@ -13,6 +13,8 @@ import android.widget.Button;
 import androidx.fragment.app.Fragment;
 
 import com.android.realize.R;
+import com.android.realize.activity.list.ListViewActivity;
+import com.android.realize.activity.list.RecyclerViewActivity;
 import com.android.realize.activity.scrollview.ScrollViewActivity;
 import com.android.realize.broadcast.BroadcastRegister;
 import com.android.realize.activity.carema.CaremaActivity;
@@ -33,6 +35,10 @@ public class FragmentModuleRealize extends Fragment implements IGeneralInterface
     private Button mCarema;
     // 滚动视图
     private Button mScrollView;
+    // listView
+    private Button mListView;
+    // recyclerView
+    private Button mRecyclerView;
 
     @Override
     public void onAttach(Context context) {
@@ -114,11 +120,15 @@ public class FragmentModuleRealize extends Fragment implements IGeneralInterface
         mRegisterBroadcast = root.findViewById(R.id.fragment_module_btn_broadcast_register);
         mCarema = root.findViewById(R.id.fragment_module_btn_camera);
         mScrollView = root.findViewById(R.id.fragment_module_btn_scrollView);
+        mListView = root.findViewById(R.id.fragment_module_btn_list);
+        mRecyclerView = root.findViewById(R.id.fragment_module_btn_recyclerview);
 
         mStaticRegisterBroadcast.setOnClickListener(mOnClick);
         mRegisterBroadcast.setOnClickListener(mOnClick);
         mCarema.setOnClickListener(mOnClick);
         mScrollView.setOnClickListener(mOnClick);
+        mListView.setOnClickListener(mOnClick);
+        mRecyclerView.setOnClickListener(mOnClick);
     }
 
     @Override
@@ -157,6 +167,16 @@ public class FragmentModuleRealize extends Fragment implements IGeneralInterface
                 }
                 case R.id.fragment_module_btn_scrollView: {
                     Intent intent = new Intent(getActivity(), ScrollViewActivity.class);
+                    startActivity(intent);
+                    break;
+                }
+                case R.id.fragment_module_btn_list: {
+                    Intent intent = new Intent(getActivity(), ListViewActivity.class);
+                    startActivity(intent);
+                    break;
+                }
+                case R.id.fragment_module_btn_recyclerview: {
+                    Intent intent = new Intent(getActivity(), RecyclerViewActivity.class);
                     startActivity(intent);
                     break;
                 }
