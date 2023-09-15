@@ -18,6 +18,7 @@ import com.android.realize.activity.list.RecyclerViewActivity;
 import com.android.realize.activity.scrollview.ScrollViewActivity;
 import com.android.realize.broadcast.BroadcastRegister;
 import com.android.realize.activity.carema.CaremaActivity;
+import com.android.realize.custom.realize.CustomView1Realize;
 import com.android.realize.interfacces.IGeneralInterface;
 import com.android.realize.unicom.UiLog;
 
@@ -39,6 +40,8 @@ public class FragmentModuleRealize extends Fragment implements IGeneralInterface
     private Button mListView;
     // recyclerView
     private Button mRecyclerView;
+    // 自定义画面
+    private Button mCustomView;
 
     @Override
     public void onAttach(Context context) {
@@ -116,19 +119,22 @@ public class FragmentModuleRealize extends Fragment implements IGeneralInterface
         mOnClick = new OnClick();
         mIntentFilter = new IntentFilter();
 
+        // 获取组件
         mStaticRegisterBroadcast = root.findViewById(R.id.fragment_module_btn_broadcast_static_register);
         mRegisterBroadcast = root.findViewById(R.id.fragment_module_btn_broadcast_register);
         mCarema = root.findViewById(R.id.fragment_module_btn_camera);
         mScrollView = root.findViewById(R.id.fragment_module_btn_scrollView);
         mListView = root.findViewById(R.id.fragment_module_btn_list);
         mRecyclerView = root.findViewById(R.id.fragment_module_btn_recyclerview);
-
+        mCustomView = root.findViewById(R.id.fragment_module_btn_customView);
+        // 注册监听
         mStaticRegisterBroadcast.setOnClickListener(mOnClick);
         mRegisterBroadcast.setOnClickListener(mOnClick);
         mCarema.setOnClickListener(mOnClick);
         mScrollView.setOnClickListener(mOnClick);
         mListView.setOnClickListener(mOnClick);
         mRecyclerView.setOnClickListener(mOnClick);
+        mCustomView.setOnClickListener(mOnClick);
     }
 
     @Override
@@ -142,12 +148,17 @@ public class FragmentModuleRealize extends Fragment implements IGeneralInterface
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
+                case R.id.fragment_module_btn_customView: {
+                    Intent intent = new Intent(getActivity(), CustomView1Realize.class);
+                    startActivity(intent);
+                    break;
+                }
                 case R.id.fragment_module_btn_broadcast_static_register: {
                     Intent intent = new Intent();
                     ComponentName componentName = new ComponentName("com.android.realize",
                             "com.android.realize.broadcast.StaticRegistrationBroadcast");
                     intent.setComponent(componentName);
-                    getActivity().sendBroadcast(intent);
+                    startActivity(intent);
                     break;
                 }
                 case R.id.fragment_module_btn_broadcast_register: {
