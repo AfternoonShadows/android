@@ -4,27 +4,26 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.graphics.Rect;
+import android.graphics.RectF;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
-
-import androidx.annotation.Nullable;
 
 import com.android.realize.unicom.UiLog;
 
-public class CustomView1 extends View {
-    private static final String TAG = "customView1";
+public class CustomView2 extends View {
+    private static final String TAG = "CustomView2";
     private int color = 0;
     private String text = "hello my view";
     // 创建画笔
     private Paint mPaint;
 
-    public CustomView1(Context context) {
+    public CustomView2(Context context) {
         super(context);
         UiLog.d(TAG, "CustomView1 : context = " + context);
     }
 
-    public CustomView1(Context context, AttributeSet attrs) {
+    public CustomView2(Context context, AttributeSet attrs) {
         super(context, attrs);
         UiLog.d(TAG, "CustomView1 : context = " + context
                 + " attrs = " + attrs);
@@ -35,6 +34,8 @@ public class CustomView1 extends View {
         mPaint.setStyle(Paint.Style.FILL);
         // 设置文字大小
         mPaint.setTextSize(35.0f);
+        // 设置画笔宽度
+        mPaint.setStrokeWidth(15f);
         setPadding(20, 60, 0, 0);
     }
 
@@ -115,15 +116,43 @@ public class CustomView1 extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         UiLog.d(TAG, "onDraw");
-        // 设置背景色
+        // TODO 疑问：是否可以绘制外边框
+        // 绘制背景颜色
         canvas.drawColor(Color.WHITE);
-        // 绘制文本
-        canvas.drawText(text, getPaddingLeft(), getPaddingTop(), mPaint);
-    }
+        // 绘制一个点
+        // TODO 疑问 ：子视图里面的坐标是否只是1相对于子视图，还是整个视图。
+        canvas.drawPoint(100, 200, mPaint);
+        // 绘制一组点
+        canvas.drawPoints(new float[]{50, 50
+                , 50, 80,
+                50, 100}, mPaint);
+        // 绘制一条线（在坐标（200,100）和坐标（400，100）之间绘制）
+        canvas.drawLine(200, 100, 400, 100, mPaint);
+        // 绘制一组线
+        canvas.drawLines(new float[]{200, 100, 200, 400
+                , 200, 100, 400, 300}, mPaint);
+        // 绘制矩形 : 1.（左上角的点（10,400），右上角的点（100,490））
+        canvas.drawRect(10, 400, 100, 490, mPaint);
+        // 2. 矩形绘制的第二种方案（Rect是整形的int）
+        Rect rect = new Rect(130, 400, 230, 490);
+        mPaint.setColor(Color.BLUE);
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setStrokeWidth(20f);
+        canvas.drawRect(rect, mPaint);
+        // 2. 矩形绘制的第三种方案(RectF是单精度型的float)
+        RectF rectF = new RectF(250, 400, 350, 490);
+        mPaint.setColor(Color.YELLOW);
+        mPaint.setStyle(Paint.Style.FILL);
+        canvas.drawRect(rectF, mPaint);
 
-    public void setText(String text) {
-        this.text = text;
-        // 刷新文本
-        invalidate();
+        mPaint.setColor(Color.BLACK);
+        mPaint.setStrokeWidth(10f);
+
+        // 绘制圆角矩形(rx,ry代表x轴的半径和在y轴的半径)(注:大于一半是无法绘制的所以会自动修正当长度大于一半时按照长度的2一半绘制)
+        rectF = new RectF(10, 530, 210, 630);
+        mPaint.setStyle(Paint.Style.STROKE);
+        canvas.drawRoundRect(rectF, 100, 50, mPaint);
+        // 绘制圆形(前面两个参数是圆心坐标，第三个参数是半径)
+        canvas.drawCircle(410,600,50,mPaint);
     }
 }
