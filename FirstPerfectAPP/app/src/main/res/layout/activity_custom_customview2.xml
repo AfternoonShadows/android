@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="设置点、线、图形" />
+
+    <com.android.realize.custom.view.CustomView2
+        android:id="@+id/action_customview_CustomView2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

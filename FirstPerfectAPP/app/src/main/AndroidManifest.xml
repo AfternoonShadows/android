@@ -30,7 +30,10 @@
         <activity android:name=".activity.scrollview.ScrollViewActivity" />
         <activity android:name=".activity.list.ListViewActivity" />
         <activity android:name=".activity.list.RecyclerViewActivity" />
+        <activity android:name=".custom.realize.CustomViewRealizeManage" />
         <activity android:name=".custom.realize.CustomView1Realize" />
+        <activity android:name=".custom.realize.CustomView2Realize" />
+        <activity android:name=".custom.realize.CustomView3Realize" />
 
         <receiver
             android:name=".broadcast.StaticRegistrationBroadcast"

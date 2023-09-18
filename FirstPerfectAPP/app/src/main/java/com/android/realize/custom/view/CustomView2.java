@@ -35,7 +35,11 @@ public class CustomView2 extends View {
         // 设置文字大小
         mPaint.setTextSize(35.0f);
         // 设置画笔宽度
-        mPaint.setStrokeWidth(15f);
+        mPaint.setStrokeWidth(10f);
+        // 设置圆点形状 : 圆头 (ROUND)、平头 (BUTT) 和方头 (SQUARE) 三种
+        mPaint.setStrokeCap(Paint.Cap.ROUND);
+        // 开启抗锯齿
+        mPaint.setAntiAlias(false);
         setPadding(20, 60, 0, 0);
     }
 
@@ -114,15 +118,21 @@ public class CustomView2 extends View {
     // 4.实际绘制内容
     @Override
     protected void onDraw(Canvas canvas) {
-        super.onDraw(canvas);
+//        super.onDraw(canvas);
         UiLog.d(TAG, "onDraw");
         // TODO 疑问：是否可以绘制外边框
         // 绘制背景颜色
         canvas.drawColor(Color.WHITE);
         // 绘制一个点
         // TODO 疑问 ：子视图里面的坐标是否只是1相对于子视图，还是整个视图。
+        // 设置圆点形状 : 圆头 (ROUND)、平头 (BUTT) 和方头 (SQUARE) 三种
+        mPaint.setStrokeCap(Paint.Cap.BUTT);
+        mPaint.setStrokeWidth(40f);
         canvas.drawPoint(100, 200, mPaint);
-        // 绘制一组点
+
+        mPaint.setStrokeCap(Paint.Cap.ROUND);
+        mPaint.setStrokeWidth(10f);
+        // 绘制一组点 (offset : 偏移的位置 , count : 偏移后需要处理点的数量 )
         canvas.drawPoints(new float[]{50, 50
                 , 50, 80,
                 50, 100}, mPaint);
@@ -153,6 +163,36 @@ public class CustomView2 extends View {
         mPaint.setStyle(Paint.Style.STROKE);
         canvas.drawRoundRect(rectF, 100, 50, mPaint);
         // 绘制圆形(前面两个参数是圆心坐标，第三个参数是半径)
-        canvas.drawCircle(410,600,50,mPaint);
+        canvas.drawCircle(410, 600, 50, mPaint);
+        /**
+         * 绘制圆弧 :.
+         *  startAngle : 开始角度
+         *  sweepAngle : 旋转角度，正值：顺时针旋转，负值：逆时针旋转
+         *  useCenter : 是否经过圆心(经过圆心是扇形，不经过圆心是弧形)
+         */
+        rectF = new RectF(500, 100, 700, 300);
+        mPaint.setStyle(Paint.Style.FILL);
+        mPaint.setColor(Color.GRAY);
+        canvas.drawRect(rectF, mPaint);
+        mPaint.setColor(Color.BLACK);
+        canvas.drawArc(rectF, 0, 90, false, mPaint);
+        rectF = new RectF(500, 350, 700, 550);
+        mPaint.setColor(Color.GRAY);
+        canvas.drawRect(rectF, mPaint);
+        mPaint.setColor(Color.BLACK);
+        canvas.drawArc(rectF, 0, 90, true, mPaint);
+
+        rectF = new RectF(750, 100, 950, 300);
+        mPaint.setStyle(Paint.Style.STROKE);
+        mPaint.setColor(Color.GRAY);
+        canvas.drawRect(rectF, mPaint);
+        mPaint.setColor(Color.BLACK);
+        canvas.drawArc(rectF, 0, -90, false, mPaint);
+        rectF = new RectF(750, 350, 950, 550);
+        mPaint.setColor(Color.GRAY);
+        canvas.drawRect(rectF, mPaint);
+        mPaint.setColor(Color.BLACK);
+        canvas.drawArc(rectF, 0, -90, true, mPaint);
+
     }
 }

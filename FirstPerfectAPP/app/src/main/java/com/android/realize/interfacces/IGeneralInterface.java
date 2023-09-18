@@ -1,8 +1,5 @@
 package com.android.realize.interfacces;
 
-/**
- *
- **/
 public interface IGeneralInterface {
     /**
      * init.
