@@ -17,6 +17,7 @@ public class CustomViewRealizeManage extends AppCompatActivity implements IGener
     private Button mCustomView1;
     private Button mCustomView2;
     private Button mCustomView3;
+    private Button mCustomView4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,15 +33,28 @@ public class CustomViewRealizeManage extends AppCompatActivity implements IGener
         mCustomView1 = findViewById(R.id.activity_custom_btn_customview1);
         mCustomView2 = findViewById(R.id.activity_custom_btn_customview2);
         mCustomView3 = findViewById(R.id.activity_custom_btn_customview3);
+        mCustomView4 = findViewById(R.id.activity_custom_btn_customview4);
 
         mCustomView1.setOnClickListener(mOnClick);
         mCustomView2.setOnClickListener(mOnClick);
         mCustomView3.setOnClickListener(mOnClick);
+        mCustomView4.setOnClickListener(mOnClick);
     }
 
     @Override
     public void release() {
         mOnClick = null;
+        mCustomView1 = null;
+        mCustomView2 = null;
+        mCustomView3 = null;
+        mCustomView4 = null;
+
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        release();
     }
 
     private class OnClick implements View.OnClickListener {
@@ -59,6 +73,11 @@ public class CustomViewRealizeManage extends AppCompatActivity implements IGener
                 }
                 case R.id.activity_custom_btn_customview3: {
                     Intent intent = new Intent(CustomViewRealizeManage.this, CustomView3Realize.class);
+                    startActivity(intent);
+                    break;
+                }
+                case R.id.activity_custom_btn_customview4: {
+                    Intent intent = new Intent(CustomViewRealizeManage.this, CustomView4Realize.class);
                     startActivity(intent);
                     break;
                 }
