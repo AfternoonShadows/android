@@ -18,7 +18,7 @@ import com.android.realize.activity.list.RecyclerViewActivity;
 import com.android.realize.activity.scrollview.ScrollViewActivity;
 import com.android.realize.broadcast.BroadcastRegister;
 import com.android.realize.activity.carema.CaremaActivity;
-import com.android.realize.custom.realize.CustomViewRealizeManage;
+import com.android.realize.custom.CustomViewRealizeManage;
 import com.android.realize.interfacces.IGeneralInterface;
 import com.android.realize.unicom.UiLog;
 

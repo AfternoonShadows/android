@@ -31,4 +31,11 @@
         android:layout_height="wrap_content"
         android:background="@drawable/view_radio_10"
         android:text="Shader设置渐变色" />
+
+    <Button
+        android:id="@+id/activity_custom_btn_customTextView1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/view_radio_10"
+        android:text="TextView1" />
 </LinearLayout>

@@ -30,11 +30,12 @@
         <activity android:name=".activity.scrollview.ScrollViewActivity" />
         <activity android:name=".activity.list.ListViewActivity" />
         <activity android:name=".activity.list.RecyclerViewActivity" />
-        <activity android:name=".custom.realize.CustomViewRealizeManage" />
+        <activity android:name=".custom.CustomViewRealizeManage" />
         <activity android:name=".custom.realize.CustomView1Realize" />
         <activity android:name=".custom.realize.CustomView2Realize" />
         <activity android:name=".custom.realize.CustomView3Realize" />
         <activity android:name=".custom.realize.CustomView4Realize" />
+        <activity android:name=".custom.assembly.textview.realize.CustomTextViewRealize1" />
 
         <receiver
             android:name=".broadcast.StaticRegistrationBroadcast"

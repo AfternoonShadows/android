@@ -1,4 +1,4 @@
-package com.android.realize.custom.realize;
+package com.android.realize.custom;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -8,6 +8,11 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.realize.R;
+import com.android.realize.custom.assembly.textview.realize.CustomTextViewRealize1;
+import com.android.realize.custom.realize.CustomView1Realize;
+import com.android.realize.custom.realize.CustomView2Realize;
+import com.android.realize.custom.realize.CustomView3Realize;
+import com.android.realize.custom.realize.CustomView4Realize;
 import com.android.realize.interfacces.IGeneralInterface;
 import com.android.realize.unicom.UiLog;
 
@@ -18,6 +23,7 @@ public class CustomViewRealizeManage extends AppCompatActivity implements IGener
     private Button mCustomView2;
     private Button mCustomView3;
     private Button mCustomView4;
+    private Button mCustomTextView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,11 +40,13 @@ public class CustomViewRealizeManage extends AppCompatActivity implements IGener
         mCustomView2 = findViewById(R.id.activity_custom_btn_customview2);
         mCustomView3 = findViewById(R.id.activity_custom_btn_customview3);
         mCustomView4 = findViewById(R.id.activity_custom_btn_customview4);
+        mCustomTextView = findViewById(R.id.activity_custom_btn_customTextView1);
 
         mCustomView1.setOnClickListener(mOnClick);
         mCustomView2.setOnClickListener(mOnClick);
         mCustomView3.setOnClickListener(mOnClick);
         mCustomView4.setOnClickListener(mOnClick);
+        mCustomTextView.setOnClickListener(mOnClick);
     }
 
     @Override
@@ -78,6 +86,11 @@ public class CustomViewRealizeManage extends AppCompatActivity implements IGener
                 }
                 case R.id.activity_custom_btn_customview4: {
                     Intent intent = new Intent(CustomViewRealizeManage.this, CustomView4Realize.class);
+                    startActivity(intent);
+                    break;
+                }
+                case R.id.activity_custom_btn_customTextView1: {
+                    Intent intent = new Intent(CustomViewRealizeManage.this, CustomTextViewRealize1.class);
                     startActivity(intent);
                     break;
                 }
