@@ -7,16 +7,23 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.ColorFilter;
 import android.graphics.ColorMatrixColorFilter;
+import android.graphics.ComposePathEffect;
 import android.graphics.ComposeShader;
+import android.graphics.CornerPathEffect;
+import android.graphics.DashPathEffect;
+import android.graphics.DiscretePathEffect;
 import android.graphics.LightingColorFilter;
 import android.graphics.LinearGradient;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.PathDashPathEffect;
+import android.graphics.PathEffect;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.RadialGradient;
 import android.graphics.RectF;
 import android.graphics.Shader;
+import android.graphics.SumPathEffect;
 import android.graphics.SweepGradient;
 import android.graphics.drawable.shapes.Shape;
 import android.util.AttributeSet;
@@ -29,6 +36,8 @@ public class CustomView4 extends View {
 
     public CustomView4(Context context, AttributeSet attrs) {
         super(context, attrs);
+        // 关闭硬件加速器
+        setLayerType(LAYER_TYPE_SOFTWARE, null);
         mPaint = new Paint();
         mPaint.setColor(Color.BLACK);
         mPaint.setStrokeWidth(10f);
@@ -117,5 +126,26 @@ public class CustomView4 extends View {
         // ColorFilter lightingColorFilter = new LightingColorFilter();
         // ColorFilter colorMatrixColorFilter = new ColorMatrixColorFilter()
         // ColorFilter porterDuffColorFilter = new PorterDuffColorFilter()
+        // 设置色彩抖动(主要在像素降低时使用)
+        mPaint.setDither(true);
+        // 给图形的轮廓设计效果
+        /**
+         * 单一效果：
+         * CornerPathEffect :
+         * DiscretePathEffect :
+         * DashPathEffect :
+         * PathDashPathEffect :
+         * 组合效果：
+         * SumPathEffect
+         * ComposePathEffect
+         */
+        PathEffect cornerPathEffect = new CornerPathEffect(20);
+        PathEffect discretePathEffect = new DiscretePathEffect(3, 2);
+        PathEffect dashPathEffect = new DashPathEffect(new float[]{2, 3}, 2);
+        PathEffect pathDashPathEffect = new PathDashPathEffect(null, 2, 2, PathDashPathEffect.Style.ROTATE);
+        // PathEffect sumPathEffect = new SumPathEffect(20);
+        // PathEffect composePathEffect = new ComposePathEffect(20);
+        // mPaint.setPathEffect(cornerPathEffect);
+        // mPaint.getFillPath();
     }
 }

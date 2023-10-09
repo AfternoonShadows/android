@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.realize.R;
+import com.android.realize.custom.assembly.seekBar.realize.CustomLoadingRealize1;
 import com.android.realize.custom.assembly.textview.realize.CustomTextViewRealize1;
 import com.android.realize.custom.realize.CustomView1Realize;
 import com.android.realize.custom.realize.CustomView2Realize;
@@ -24,6 +25,7 @@ public class CustomViewRealizeManage extends AppCompatActivity implements IGener
     private Button mCustomView3;
     private Button mCustomView4;
     private Button mCustomTextView;
+    private Button mCustomLoadingView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,12 +43,14 @@ public class CustomViewRealizeManage extends AppCompatActivity implements IGener
         mCustomView3 = findViewById(R.id.activity_custom_btn_customview3);
         mCustomView4 = findViewById(R.id.activity_custom_btn_customview4);
         mCustomTextView = findViewById(R.id.activity_custom_btn_customTextView1);
+        mCustomLoadingView = findViewById(R.id.activity_custom_btn_customLoadingView1);
 
         mCustomView1.setOnClickListener(mOnClick);
         mCustomView2.setOnClickListener(mOnClick);
         mCustomView3.setOnClickListener(mOnClick);
         mCustomView4.setOnClickListener(mOnClick);
         mCustomTextView.setOnClickListener(mOnClick);
+        mCustomLoadingView.setOnClickListener(mOnClick);
     }
 
     @Override
@@ -56,6 +60,8 @@ public class CustomViewRealizeManage extends AppCompatActivity implements IGener
         mCustomView2 = null;
         mCustomView3 = null;
         mCustomView4 = null;
+        mCustomTextView = null;
+        mCustomLoadingView = null;
 
     }
 
@@ -91,6 +97,11 @@ public class CustomViewRealizeManage extends AppCompatActivity implements IGener
                 }
                 case R.id.activity_custom_btn_customTextView1: {
                     Intent intent = new Intent(CustomViewRealizeManage.this, CustomTextViewRealize1.class);
+                    startActivity(intent);
+                    break;
+                }
+                case R.id.activity_custom_btn_customLoadingView1: {
+                    Intent intent = new Intent(CustomViewRealizeManage.this, CustomLoadingRealize1.class);
                     startActivity(intent);
                     break;
                 }

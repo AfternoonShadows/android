@@ -6,14 +6,16 @@
         <entry key="app/src/main/res/drawable/activity_selector_btn.xml" value="0.179" />
         <entry key="app/src/main/res/drawable/btn_circle.xml" value="0.179" />
         <entry key="app/src/main/res/drawable/view_radio_10.xml" value="0.179" />
+        <entry key="app/src/main/res/layout/activity.xml" value="0.6413345690454124" />
         <entry key="app/src/main/res/layout/activity_custom_customview4.xml" value="0.29434202161474887" />
         <entry key="app/src/main/res/layout/activity_custom_customview_manage.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_custom_textview1.xml" value="0.3457142857142857" />
         <entry key="app/src/main/res/layout/fragment_module.xml" value="0.18645833333333334" />
       </map>
     </option>
   </component>
   <component name="ExternalStorageConfigurationManager" enabled="true" />
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
